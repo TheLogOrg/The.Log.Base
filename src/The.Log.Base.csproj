@@ -14,6 +14,8 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
 
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
     <PackageProjectUrl>https://github.com/TheLogOrg/The.Log.Base</PackageProjectUrl>
     <RepositoryUrl>https://github.com/TheLogOrg/The.Log.Base</RepositoryUrl>
   </PropertyGroup>
@@ -23,7 +25,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="The.Log.CodeAnalyzer" Version="1.0.0">
+    <PackageReference Include="The.Log.CodeAnalyzer" Version="1.1.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>

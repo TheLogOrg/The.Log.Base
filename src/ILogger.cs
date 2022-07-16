@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 
 namespace The.Log.Base;
 
+#pragma warning disable CA1716 // Identifiers should not match keywords
+
 /// <summary>
 /// A log.
 /// </summary>
@@ -24,7 +26,7 @@ public interface ILogger
     string Name { get; }
 
     /// <summary>
-    /// Gets or sets the minimum <see cref="LogLevel"/>.
+    /// Gets or sets the minimum <see cref="ILogLevel"/>.
     /// </summary>
     ILogLevel MinimumLogLevel { get; set; }
 
@@ -41,35 +43,35 @@ public interface ILogger
     ILogger Log(ILogLevel logLevel, object payload);
 
     /// <summary>
-    /// Creates a new log message with <see cref="LogLevel.Debug"/> and <paramref name="payload"/>.
+    /// Creates a new log message with debug <see cref="ILogLevel"/> and <paramref name="payload"/>.
     /// </summary>
     /// <param name="payload">The payload.</param>
     /// <returns>This <see cref="ILogger"/>.</returns>
     ILogger Debug(object payload);
 
     /// <summary>
-    /// Creates a new log message with <see cref="LogLevel.Info"/> and <paramref name="payload"/>.
+    /// Creates a new log message with info <see cref="ILogLevel"/> and <paramref name="payload"/>.
     /// </summary>
     /// <param name="payload">The payload.</param>
     /// <returns>This <see cref="ILogger"/>.</returns>
     ILogger Info(object payload);
 
     /// <summary>
-    /// Creates a new log message with <see cref="LogLevel.Warning"/> and <paramref name="payload"/>.
+    /// Creates a new log message with warning <see cref="ILogLevel"/> and <paramref name="payload"/>.
     /// </summary>
     /// <param name="payload">The payload.</param>
     /// <returns>This <see cref="ILogger"/>.</returns>
     ILogger Warning(object payload);
 
     /// <summary>
-    /// Creates a new log message with <see cref="LogLevel.Error"/> and <paramref name="payload"/>.
+    /// Creates a new log message with error <see cref="ILogLevel"/> and <paramref name="payload"/>.
     /// </summary>
     /// <param name="payload">The payload.</param>
     /// <returns>This <see cref="ILogger"/>.</returns>
     ILogger Error(object payload);
 
     /// <summary>
-    /// Creates a new log message with <see cref="LogLevel.Fatal"/> and <paramref name="payload"/>.
+    /// Creates a new log message with fatal <see cref="ILogLevel"/> and <paramref name="payload"/>.
     /// </summary>
     /// <param name="payload">The payload.</param>
     /// <returns>This <see cref="ILogger"/>.</returns>
@@ -118,9 +120,12 @@ public interface ILogger
     void RemoveFilter(Predicate<ILogMessage> filter);
 
     /// <summary>
-    /// Get
+    /// Gets the child logger with <paramref name="name"/>.
     /// </summary>
-    /// <param name="name"></param>
-    /// <returns></returns>
+    /// <param name="name">The name of the logger.</param>
+    /// <seealso cref="ILogger"/>
+    /// <returns>The child logger.</returns>
     ILogger GetLogger(string name);
 }
+
+#pragma warning restore CA1716 // Identifiers should not match keywords
