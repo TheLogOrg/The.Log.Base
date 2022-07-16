@@ -20,7 +20,8 @@ jobs:
     - name: Check Project Version
       working-directory: ./src
       shell: pwsh
-      run: ([xml](Get-Content The.Log.Base.csproj)).Project.PropertyGroup.Version
+      run: ([xml](Get-Content The.Log.Base.csproj)).Project.PropertyGroup.Version.Equals("${GITHUB_REF#refs/*/}")
+      if: startsWith(github.ref, 'refs/tags/')
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
