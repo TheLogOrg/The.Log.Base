@@ -1,6 +1,6 @@
 // ----------------------------------------------------------------------------
-// <copyright file="ILogLevel.cs" company="AnyLog">
-// Copyright (c) AnyLog Project
+// <copyright file="ILogLevel.cs" company="TheLogOrg">
+// Copyright (c) The.Log Project
 // </copyright>
 // ----------------------------------------------------------------------------
 

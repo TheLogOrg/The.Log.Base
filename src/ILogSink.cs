@@ -1,6 +1,6 @@
 // ----------------------------------------------------------------------------
-// <copyright file="ILogSink.cs" company="AnyLog">
-// Copyright (c) AnyLog Project
+// <copyright file="ILogSink.cs" company="TheLogOrg">
+// Copyright (c) The.Log Project
 // </copyright>
 // ----------------------------------------------------------------------------
 

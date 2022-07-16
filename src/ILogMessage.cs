@@ -1,6 +1,6 @@
 ﻿// ----------------------------------------------------------------------------
-// <copyright file="ILogMessage.cs" company="AnyLog">
-// Copyright (c) AnyLog Project
+// <copyright file="ILogMessage.cs" company="TheLogOrg">
+// Copyright (c) The.Log Project
 // </copyright>
 // ----------------------------------------------------------------------------
 
