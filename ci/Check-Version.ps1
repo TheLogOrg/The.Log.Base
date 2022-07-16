@@ -17,5 +17,6 @@ if ($version.Equals($tagName)) {
     Write-Host "Version mismatch"
     Write-Host "Expected: $tagName"
     Write-Host "Actual: $projectVersion"
+    
     exit 1
 }
