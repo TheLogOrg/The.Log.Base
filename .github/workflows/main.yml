@@ -17,6 +17,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Check Project Version
+      working-directory: ./src
+      shell: pwsh
+      run: ([xml](Get-Content ./src/The.Log.Base.csproj)).Project.PropertyGroup.Version
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
