@@ -23,7 +23,7 @@ jobs:
         dotnet-version: 6.0.x
         include-prerelease: true
     - name: Setup nuget source
-      run: dotnet nuget add source --username wolfbublitz --password ${{ secrets.NUGET_API_KEY }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/AnyLog/index.json"
+      run: dotnet nuget add source --username wolfbublitz --password ${{ secrets.NUGET_API_KEY }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/TheLogOrg/index.json"
     - name: Install dependencies
       working-directory: ./src
       run: dotnet restore
@@ -36,6 +36,6 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/')
     - name: Publish
       working-directory: ./src
-      run: dotnet nuget push bin/Release/*.nupkg --source https://nuget.pkg.github.com/AnyLog/index.json --api-key ${{ secrets.GITHUB_TOKEN }}
+      run: dotnet nuget push bin/Release/*.nupkg --source https://nuget.pkg.github.com/TheLogOrg/index.json --api-key ${{ secrets.GITHUB_TOKEN }}
       if: startsWith(github.ref, 'refs/tags/')
 
